@@ -20,6 +20,8 @@ jobs:
       run: npm install
     - name: Run tests
       run: npm run test
+    - name: Display SoftUni username
+      run: echo "vas.denkov"
 
   deploy:
     needs: build-and-test
@@ -30,4 +32,5 @@ jobs:
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
-          wait-for-success: true
+      - name: Wait for deploy
+        run: sleep 60
