@@ -34,3 +34,4 @@ jobs:
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
       - name: Wait for deploy
         run: sleep 60
+ 
